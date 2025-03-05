@@ -1,0 +1,28 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Abstract Canvas Art",
+            "price": 1999,
+            "description": "Beautiful abstract art piece perfect for modern homes",
+            "image": "images/product1.jpg",
+            "category": "Canvas"
+        },
+        {
+            "id": 2,
+            "name": "Traditional Wall Art",
+            "price": 2499,
+            "description": "Handcrafted traditional Bengali art piece",
+            "image": "images/product2.jpg",
+            "category": "Wall Art"
+        },
+        {
+            "id": 3,
+            "name": "Modern Sculpture",
+            "price": 3999,
+            "description": "Contemporary sculpture for home decoration",
+            "image": "images/product3.jpg",
+            "category": "Sculpture"
+        }
+    ]
+}
