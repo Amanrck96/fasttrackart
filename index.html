@@ -3,103 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FastTrackArt - Cooch Behar's Premier Art Store</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>FastTrackArt - Cooch Behar's Art Store</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <!-- Location Check Modal -->
     <div id="locationModal" class="modal">
         <div class="modal-content">
-            <h2>📍 Welcome to FastTrackArt</h2>
+            <h2><i class="fas fa-map-marker-alt fa-bounce"></i> Welcome to FastTrackArt</h2>
             <p>We deliver exclusively in Cooch Behar (PIN: 736101)</p>
             <div class="location-options">
                 <button onclick="checkLocation()" class="btn-primary">
-                    <i class="fas fa-map-marker-alt"></i> Use My Location
+                    <i class="fas fa-location-crosshairs fa-beat"></i> Use My Location
                 </button>
                 <p>- or -</p>
                 <button onclick="promptPincode()" class="btn-secondary">
-                    <i class="fas fa-home"></i> Enter Pincode
+                    <i class="fas fa-home fa-bounce"></i> Enter Pincode
                 </button>
             </div>
             <p class="location-note">* We currently serve only PIN code 736101</p>
         </div>
     </div>
 
-    <!-- Header -->
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <img src="images/logo.png" alt="FastTrackArt Logo" id="logo">
-                <span>FastTrackArt</span>
-            </div>
-            <div class="nav-links">
-                <a href="#home" class="active">Home</a>
-                <a href="#products">Products</a>
-                <a href="#contact">Contact</a>
-                <a href="#cart" class="cart-icon">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span id="cart-count">0</span>
-                </a>
-            </div>
-        </nav>
-    </header>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo.png" alt="FastTrackArt Logo">
+        </div>
+        <div class="nav-links">
+            <a href="#" class="active"><i class="fas fa-home"></i> Home</a>
+            <a href="#products"><i class="fas fa-palette"></i> Products</a>
+            <a href="#about"><i class="fas fa-info-circle"></i> About</a>
+            <a href="cart.html" class="cart-link">
+                <i class="fas fa-shopping-cart fa-shake"></i>
+                <span id="cart-count" class="badge">0</span>
+            </a>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
-    <section id="hero">
+    <section class="hero">
         <div class="hero-content">
-            <h1>Welcome to FastTrackArt</h1>
-            <p>Discover unique art pieces delivered to your doorstep in Cooch Behar</p>
-            <a href="#products" class="btn-primary">Explore Collection</a>
+            <h1><i class="fas fa-paint-brush fa-bounce"></i> Discover Local Art</h1>
+            <p>Bringing Cooch Behar's finest artworks directly to your doorstep</p>
         </div>
     </section>
 
-    <!-- Featured Products -->
-    <section id="products">
-        <h2>Featured Products</h2>
-        <div class="product-grid" id="product-container">
-            <!-- Products will be loaded dynamically -->
-        </div>
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <h2><i class="fas fa-store fa-beat"></i> Our Collection</h2>
+        <div id="product-container" class="product-grid"></div>
     </section>
 
-    <!-- About Section -->
-    <section id="about">
-        <h2>Why Choose FastTrackArt?</h2>
-        <div class="features">
-            <div class="feature">
-                <i class="fas fa-truck"></i>
-                <h3>Local Delivery</h3>
-                <p>Same-day delivery in Cooch Behar</p>
-            </div>
-            <div class="feature">
-                <i class="fas fa-palette"></i>
-                <h3>Unique Art</h3>
-                <p>Handpicked collection of artwork</p>
-            </div>
-            <div class="feature">
-                <i class="fas fa-money-bill-wave"></i>
-                <h3>Easy Payment</h3>
-                <p>UPI & Cash on Delivery available</p>
-            </div>
+    <!-- Features -->
+    <section class="features">
+        <div class="feature">
+            <i class="fas fa-truck fa-bounce"></i>
+            <h3>Local Delivery</h3>
+            <p>Same day delivery in Cooch Behar</p>
         </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <div class="contact-info">
-            <div class="contact-details">
-                <i class="fas fa-map-marker-alt"></i>
-                <p>Cooch Behar, West Bengal</p>
-            </div>
-            <div class="contact-details">
-                <i class="fas fa-phone"></i>
-                <p>Contact support for assistance</p>
-            </div>
-            <div class="contact-details">
-                <i class="fas fa-envelope"></i>
-                <p>Email support for inquiries</p>
-            </div>
+        <div class="feature">
+            <i class="fas fa-shield-alt fa-beat"></i>
+            <h3>Secure Payments</h3>
+            <p>UPI and Cash on Delivery</p>
+        </div>
+        <div class="feature">
+            <i class="fas fa-heart fa-pulse"></i>
+            <h3>Quality Art</h3>
+            <p>Handpicked local artworks</p>
         </div>
     </section>
 
@@ -107,19 +79,19 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3>FastTrackArt</h3>
-                <p>Your premier art destination in Cooch Behar</p>
+                <h3><i class="fas fa-phone fa-shake"></i> Contact Us</h3>
+                <p>Email: support@fasttrackart.com</p>
+                <p>Phone: +91 1234567890</p>
             </div>
             <div class="footer-section">
-                <h3>Quick Links</h3>
-                <a href="#home">Home</a>
-                <a href="#products">Products</a>
-                <a href="#contact">Contact</a>
+                <h3><i class="fas fa-map-marker-alt fa-bounce"></i> Address</h3>
+                <p>123 Art Street, Cooch Behar</p>
+                <p>West Bengal, PIN: 736101</p>
             </div>
             <div class="footer-section">
-                <h3>Payment Options</h3>
-                <p>UPI: amanrck69-1@okhdfcbank</p>
-                <p>Cash on Delivery</p>
+                <h3><i class="fas fa-clock fa-spin"></i> Hours</h3>
+                <p>Mon-Sat: 10:00 AM - 8:00 PM</p>
+                <p>Sunday: Closed</p>
             </div>
         </div>
         <div class="footer-bottom">
