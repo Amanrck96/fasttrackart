@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - FastTrackArt</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo.png" alt="FastTrackArt Logo">
+        </div>
+        <div class="nav-links">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="index.html#products"><i class="fas fa-palette"></i> Products</a>
+            <a href="about.html" class="active"><i class="fas fa-user"></i> About</a>
+            <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+            <a href="cart.html" class="cart-link">
+                <i class="fas fa-shopping-cart fa-shake"></i>
+                <span id="cart-count" class="badge">0</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="about-header">
+            <h1><i class="fas fa-user-circle fa-bounce"></i> About the Owner</h1>
+            <div class="owner-info">
+                <h2>Aman Sah</h2>
+                <p class="title">Data Analyst & MIS Executive</p>
+                <p class="description">Results-driven Data Analyst and MIS Executive with over 6 years of experience leveraging advanced Excel, Power BI, and Python for data-driven decision-making.</p>
+            </div>
+        </div>
+
+        <div class="about-content">
+            <div class="about-card">
+                <h3><i class="fas fa-briefcase fa-beat"></i> Professional Experience</h3>
+                <div class="experience-item">
+                    <h4>Senior MIS Executive</h4>
+                    <p class="company">Intellipaat Software Solutions Private Limited</p>
+                    <p class="date">July 2024 - Nov 2024</p>
+                </div>
+                <div class="experience-item">
+                    <h4>HR Analytics</h4>
+                    <p class="company">ZETWERK MANUFACTURING BUSINESSES PRIVATE LIMITED</p>
+                    <p class="date">Jun 2023 - Dec 2023</p>
+                </div>
+                <div class="experience-item">
+                    <h4>Data Analyst</h4>
+                    <p class="company">K12 Techno Services Pvt. Ltd</p>
+                    <p class="date">Oct 2022 - Mar 2023</p>
+                </div>
+            </div>
+
+            <div class="about-card">
+                <h3><i class="fas fa-laptop-code fa-bounce"></i> Technical Skills</h3>
+                <ul class="skills-list">
+                    <li><i class="fas fa-check"></i> Data Mapping & Analytics</li>
+                    <li><i class="fas fa-check"></i> Advanced Microsoft Excel</li>
+                    <li><i class="fas fa-check"></i> Power BI & Tableau</li>
+                    <li><i class="fas fa-check"></i> Python & SQL</li>
+                    <li><i class="fas fa-check"></i> VBA & Automation</li>
+                </ul>
+            </div>
+
+            <div class="about-card">
+                <h3><i class="fas fa-award fa-beat"></i> Achievements</h3>
+                <div class="achievements-grid">
+                    <div class="achievement-item">
+                        <span class="number">30+</span>
+                        <p>Hours Monthly Time Saved</p>
+                    </div>
+                    <div class="achievement-item">
+                        <span class="number">25%</span>
+                        <p>Improved Forecasting</p>
+                    </div>
+                    <div class="achievement-item">
+                        <span class="number">40%</span>
+                        <p>Enhanced Reporting</p>
+                    </div>
+                    <div class="achievement-item">
+                        <span class="number">20%</span>
+                        <p>Increased Retention</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-info">
+            <h3><i class="fas fa-address-card fa-bounce"></i> Contact Information</h3>
+            <div class="info-grid">
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>Amanrck69@gmail.com</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <p>9547526440 / 8250522929</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>S.N. Road, Near BSF Camp, Cooch Behar, West Bengal</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-phone fa-shake"></i> Contact Us</h3>
+                <p>Email: Amanrck69@gmail.com</p>
+                <p>Phone: 9547526440</p>
+            </div>
+            <div class="footer-section">
+                <h3><i class="fas fa-map-marker-alt fa-bounce"></i> Address</h3>
+                <p>S.N. Road, Near BSF Camp</p>
+                <p>Cooch Behar, West Bengal</p>
+            </div>
+            <div class="footer-section">
+                <h3><i class="fas fa-clock fa-spin"></i> Hours</h3>
+                <p>Mon-Sat: 10:00 AM - 8:00 PM</p>
+                <p>Sunday: Closed</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 FastTrackArt. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Update cart count on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartCount = document.getElementById('cart-count');
+            if (cartCount) {
+                cartCount.textContent = cart.length;
+                cartCount.style.display = cart.length > 0 ? 'inline' : 'none';
+            }
+        });
+    </script>
+</body>
+</html>
