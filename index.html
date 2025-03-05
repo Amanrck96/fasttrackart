@@ -11,9 +11,18 @@
     <!-- Location Check Modal -->
     <div id="locationModal" class="modal">
         <div class="modal-content">
-            <h2>📍 Location Check</h2>
-            <p>FastTrackArt delivers exclusively in Cooch Behar.</p>
-            <button onclick="checkLocation()" class="btn-primary">Check Location</button>
+            <h2>📍 Welcome to FastTrackArt</h2>
+            <p>We deliver exclusively in Cooch Behar (PIN: 736101)</p>
+            <div class="location-options">
+                <button onclick="checkLocation()" class="btn-primary">
+                    <i class="fas fa-map-marker-alt"></i> Use My Location
+                </button>
+                <p>- or -</p>
+                <button onclick="promptPincode()" class="btn-secondary">
+                    <i class="fas fa-home"></i> Enter Pincode
+                </button>
+            </div>
+            <p class="location-note">* We currently serve only PIN code 736101</p>
         </div>
     </div>
 

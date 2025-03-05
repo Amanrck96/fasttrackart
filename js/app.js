@@ -18,10 +18,10 @@ function checkLocation() {
     if ("geolocation" in navigator) {
         navigator.geolocation.getCurrentPosition(
             position => {
-                // Cooch Behar coordinates (approximate)
+                // Cooch Behar coordinates (exact center)
                 const coochBehar = {
-                    lat: 26.3245,
-                    lng: 89.4552
+                    lat: 26.3452,
+                    lng: 89.4482
                 };
 
                 // Calculate distance between current location and Cooch Behar
@@ -32,12 +32,12 @@ function checkLocation() {
                     coochBehar.lng
                 );
 
-                // If within 20km of Cooch Behar
-                if (distance <= 20) {
+                // If within 5km of Cooch Behar center (more precise)
+                if (distance <= 5) {
                     document.getElementById('locationModal').style.display = 'none';
                     localStorage.setItem('locationVerified', 'true');
                 } else {
-                    alert('Sorry, we currently only serve in Cooch Behar area.');
+                    promptPincode();
                 }
             },
             error => {
@@ -68,15 +68,12 @@ function toRad(value) {
 }
 
 function promptPincode() {
-    const pincode = prompt("Please enter your pincode:");
-    // Cooch Behar pincodes (example)
-    const validPincodes = ['736101', '736102', '736121', '736122', '736123', '736133', '736134', '736135'];
-    
-    if (validPincodes.includes(pincode)) {
+    const pincode = prompt("Please enter your pincode to verify delivery availability:");
+    if (pincode === '736101') {
         document.getElementById('locationModal').style.display = 'none';
         localStorage.setItem('locationVerified', 'true');
     } else {
-        alert('Sorry, we currently only serve in Cooch Behar area.');
+        alert('Sorry, we currently only deliver to PIN: 736101 in Cooch Behar. Please contact support if you believe this is an error.');
     }
 }
 
