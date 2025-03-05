@@ -8,6 +8,7 @@
     --white: #fff;
     --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     --danger-color: #e74c3c;
+    --animation-speed: 0.3s;
 }
 
 * {
@@ -22,6 +23,43 @@ body {
     color: var(--text-color);
 }
 
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes shimmer {
+    0% { background-position: -1000px 0; }
+    100% { background-position: 1000px 0; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
 /* Modal */
 .modal {
     display: none;
@@ -32,6 +70,7 @@ body {
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     z-index: 1000;
+    animation: fadeIn var(--animation-speed) ease-out;
 }
 
 .modal-content {
@@ -43,6 +82,8 @@ body {
     padding: 2rem;
     border-radius: 10px;
     text-align: center;
+    animation: scaleIn var(--animation-speed) ease-out;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
 }
 
 .modal-content i {
@@ -88,11 +129,13 @@ body {
 
 /* Navigation */
 .navbar {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.9);
+    animation: slideIn var(--animation-speed) ease-out;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5%;
-    background: var(--white);
     box-shadow: var(--shadow);
     position: fixed;
     width: 100%;
@@ -108,6 +151,11 @@ body {
 
 .logo img {
     height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover img {
+    animation: bounce 1s infinite;
 }
 
 .logo span {
@@ -146,6 +194,7 @@ body {
     border-radius: 50%;
     padding: 0.2rem 0.5rem;
     font-size: 0.8rem;
+    animation: pulse 1s infinite;
 }
 
 /* Hero Section */
@@ -161,14 +210,20 @@ body {
     padding: 0 1rem;
 }
 
+.hero-content {
+    animation: fadeIn 1s ease-out;
+}
+
 .hero-content h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
+    animation: slideIn 0.8s ease-out;
 }
 
 .hero-content p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
+    animation: fadeIn 1s ease-out 0.3s backwards;
 }
 
 /* Buttons */
@@ -179,11 +234,18 @@ body {
     color: var(--white);
     text-decoration: none;
     border-radius: 5px;
-    transition: background 0.3s;
+    transition: transform 0.2s ease, background 0.3s ease;
+    overflow: hidden;
+    position: relative;
 }
 
 .btn-primary:hover {
+    transform: translateY(-2px);
     background: var(--secondary-color);
+}
+
+.btn-primary:active {
+    transform: translateY(1px);
 }
 
 /* Products Section */
@@ -195,7 +257,7 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
-    margin-top: 2rem;
+    padding: 2rem;
 }
 
 .product-card {
@@ -203,21 +265,45 @@ body {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: var(--shadow);
-    transition: transform 0.3s;
+    transition: transform 0.3s ease;
+    animation: scaleIn 0.5s ease-out;
 }
 
 .product-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
 }
 
 .product-image {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.05);
 }
 
 .product-info {
-    padding: 1rem;
+    padding: 1.5rem;
+}
+
+.product-info h3 {
+    margin: 0 0 1rem 0;
+    color: var(--text-color);
+}
+
+.price {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.description {
+    color: var(--dark-gray);
+    margin-bottom: 1rem;
+    line-height: 1.4;
 }
 
 /* Features Section */
@@ -239,37 +325,77 @@ body {
     background: var(--white);
     border-radius: 10px;
     box-shadow: var(--shadow);
+    animation: fadeIn 0.5s ease-out;
+    transition: transform 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
 }
 
 .feature i {
     font-size: 2rem;
     color: var(--primary-color);
     margin-bottom: 1rem;
+    animation: bounce 2s infinite;
 }
 
 /* Contact Section */
 #contact {
-    padding: 5rem 5%;
-    text-align: center;
+    background: var(--light-gray);
+    padding: 5rem 2rem;
 }
 
 .contact-info {
+    max-width: 800px;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
-    margin-top: 2rem;
 }
 
 .contact-details {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+    text-align: center;
+    padding: 2rem;
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.contact-details:hover {
+    transform: translateY(-5px);
 }
 
 .contact-details i {
     font-size: 2rem;
     color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Notification */
+.notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    animation: slideIn 0.3s ease-out, fadeOut 0.3s ease-out 1.7s;
+    z-index: 1000;
+}
+
+/* Sections */
+section {
+    padding: 5rem 2rem;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+    color: var(--text-color);
 }
 
 /* Footer */
@@ -284,6 +410,10 @@ footer {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     margin-bottom: 2rem;
+}
+
+.footer-section {
+    animation: fadeIn 0.5s ease-out;
 }
 
 .footer-section h3 {
@@ -312,6 +442,12 @@ footer {
     background: var(--white);
     border-radius: 10px;
     box-shadow: var(--shadow);
+    animation: fadeIn 0.5s ease-out;
+    transition: transform 0.3s ease;
+}
+
+.cart-item:hover {
+    transform: translateX(10px);
 }
 
 .cart-item img {
@@ -418,6 +554,12 @@ footer {
 
 .payment-option {
     margin-bottom: 1rem;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.payment-option:hover {
+    transform: scale(1.02);
+    background: var(--light-gray);
 }
 
 .upi-details {
@@ -434,6 +576,7 @@ footer {
     margin-bottom: 2rem;
     border-radius: 10px;
     box-shadow: var(--shadow);
+    animation: fadeIn 0.5s ease-out;
 }
 
 .admin-product-card {
@@ -443,6 +586,12 @@ footer {
     margin-bottom: 1rem;
     background: var(--light-gray);
     border-radius: 10px;
+    animation: slideIn 0.5s ease-out;
+    transition: transform 0.3s ease;
+}
+
+.admin-product-card:hover {
+    transform: translateX(10px);
 }
 
 .admin-product-card img {
@@ -481,6 +630,11 @@ footer {
     padding: 0.3rem 0.8rem;
     border-radius: 15px;
     font-size: 0.9rem;
+    transition: background 0.3s ease;
+}
+
+.status:hover {
+    filter: brightness(1.1);
 }
 
 .status.pending { background: #ffeaa7; }
@@ -538,5 +692,12 @@ footer {
     
     .item-quantity {
         margin: 1rem 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
     }
 }

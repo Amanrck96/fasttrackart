@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - FastTrackArt</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo.png" alt="FastTrackArt Logo">
+        </div>
+        <div class="nav-links">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="index.html#products"><i class="fas fa-palette"></i> Products</a>
+            <a href="contact.html" class="active"><i class="fas fa-envelope"></i> Contact</a>
+            <a href="cart.html" class="cart-link">
+                <i class="fas fa-shopping-cart fa-shake"></i>
+                <span id="cart-count" class="badge">0</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2><i class="fas fa-envelope fa-bounce"></i> Contact Us</h2>
+        <div class="contact-info">
+            <div class="contact-details">
+                <i class="fas fa-map-marker-alt fa-bounce"></i>
+                <h3>Address</h3>
+                <p>123 Art Street</p>
+                <p>Cooch Behar, West Bengal</p>
+                <p>PIN: 736101</p>
+            </div>
+            <div class="contact-details">
+                <i class="fas fa-phone fa-shake"></i>
+                <h3>Phone</h3>
+                <p>+91 1234567890</p>
+                <p>Mon-Sat: 10:00 AM - 8:00 PM</p>
+            </div>
+            <div class="contact-details">
+                <i class="fas fa-envelope fa-bounce"></i>
+                <h3>Email</h3>
+                <p>support@fasttrackart.com</p>
+                <p>For inquiries and support</p>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <h3>Send us a message</h3>
+            <form id="contactForm" onsubmit="return handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary">
+                    <i class="fas fa-paper-plane"></i> Send Message
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-phone fa-shake"></i> Contact Us</h3>
+                <p>Email: support@fasttrackart.com</p>
+                <p>Phone: +91 1234567890</p>
+            </div>
+            <div class="footer-section">
+                <h3><i class="fas fa-map-marker-alt fa-bounce"></i> Address</h3>
+                <p>123 Art Street, Cooch Behar</p>
+                <p>West Bengal, PIN: 736101</p>
+            </div>
+            <div class="footer-section">
+                <h3><i class="fas fa-clock fa-spin"></i> Hours</h3>
+                <p>Mon-Sat: 10:00 AM - 8:00 PM</p>
+                <p>Sunday: Closed</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 FastTrackArt. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Handle form submission
+        function handleSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            // For now, just show a success message
+            alert(`Thank you ${name}! Your message has been sent. We'll get back to you at ${email} soon.`);
+            event.target.reset();
+            return false;
+        }
+
+        // Update cart count on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartCount = document.getElementById('cart-count');
+            if (cartCount) {
+                cartCount.textContent = cart.length;
+                cartCount.style.display = cart.length > 0 ? 'inline' : 'none';
+            }
+        });
+    </script>
+</body>
+</html>

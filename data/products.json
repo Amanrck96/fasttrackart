@@ -23,6 +23,34 @@
             "description": "Contemporary sculpture for home decoration",
             "image": "images/product3.jpg",
             "category": "Sculpture"
+        },
+        {
+            "id": 4,
+            "name": "Beautiful Landscape Painting",
+            "price": 2999,
+            "image": "https://picsum.photos/400/300?random=1",
+            "description": "Stunning landscape painting of Cooch Behar Palace"
+        },
+        {
+            "id": 5,
+            "name": "Traditional Art Piece",
+            "price": 1999,
+            "image": "https://picsum.photos/400/300?random=2",
+            "description": "Beautiful traditional Bengali art piece"
+        },
+        {
+            "id": 6,
+            "name": "Modern Abstract Art",
+            "price": 3499,
+            "image": "https://picsum.photos/400/300?random=3",
+            "description": "Contemporary abstract art with vibrant colors"
+        },
+        {
+            "id": 7,
+            "name": "Handmade Pottery",
+            "price": 1499,
+            "image": "https://picsum.photos/400/300?random=4",
+            "description": "Traditional handmade pottery from local artisans"
         }
     ]
 }
